@@ -6,7 +6,7 @@ exports.load = async (req, res, next) => {
     const image = await imageService.createImage(req.file.filename, req.body.user_id);
     const data = await axios.post('http://python:5000/image', { filename: req.file.filename });
 
-    res.send(data);
+    res.send(data.data);
   } catch (error) {
     res.send(error);
   }
