@@ -11,6 +11,7 @@ if (!fs.existsSync(dir)){
 
 const imagesRouter = require('./routes/images');
 
+app.use(express.static('../uploads'));
 app.use(express.urlencoded({extended: true}));
 app.use(express.json())
 
