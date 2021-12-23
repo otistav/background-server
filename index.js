@@ -2,6 +2,12 @@ const express = require('express');
 const app = express();
 const db = require('./db');
 const PORT = 3000;
+const fs = require('fs');
+const dir = '../uploads';
+
+if (!fs.existsSync(dir)){
+    fs.mkdirSync(dir);
+}
 
 const imagesRouter = require('./routes/images');
 
