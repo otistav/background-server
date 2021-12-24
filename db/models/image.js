@@ -7,7 +7,8 @@ const imageSchema = new Schema({
     processed: {
         type: Boolean,
         default: false,
-    }
+    },
+    processed_filename: String
 });
 
 const image = mongoose.model('image', imageSchema);

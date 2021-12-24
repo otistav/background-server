@@ -1,8 +1,8 @@
 const Image = require('../db/models/image');
 
-exports.createImage = async (filename, user_id) => {
+exports.createImage = async (filename, user_id, processed_filename) => {
   try {
-    const image = new Image({ filename, user_id });
+    const image = new Image({ filename, user_id, processed_filename });
     await image.save();
     return image;
   } catch (error) {
