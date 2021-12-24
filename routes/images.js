@@ -9,4 +9,9 @@ router.get('/test', async (req, res, next) => {
   res.send(await Image.find({}))
 })
 
+router.get('/del', async (req, res, next) => {
+  Image.find({}).remove().exec();
+  res.sendStatus(200);
+})
+
 module.exports = router;
