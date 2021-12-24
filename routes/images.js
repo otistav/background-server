@@ -6,7 +6,7 @@ const Image = require('../db/models/image');
 router.post('/load', uploadMiddleware.single, imageController.load);
 
 router.get('/test', async (req, res, next) => {
-  res.send(await Image.find({}))
+  res.send((await Image.find({})).length)
 })
 
 router.get('/del', async (req, res, next) => {

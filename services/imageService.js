@@ -9,3 +9,7 @@ exports.createImage = async (filename, user_id, processed_filename) => {
     throw error;
   }
 }
+
+exports.getUnprocessedImages = async () => {
+  return (await Image.find({ processed: false }));
+}
